@@ -1,10 +1,10 @@
 <template lang="html">
-  <header class="container">
-    <el-row>
-      <el-col :span="24"><div class="grid-content bg-purple-dark"></div></el-col>
+  <el-header class="container">
+    <el-row :gutter="0">
+      <el-col :span="10">123</el-col>
+      <el-col :span="14">1123</el-col>
     </el-row>
-    
-  </header>
+  </el-header>
 
 </template>
 

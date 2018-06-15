@@ -1,7 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import Header from '@/components/header'
+import mywebHeader from '@/components/header'
+import index from '@/pages/index'
 
 Vue.use(Router)
 
@@ -13,8 +14,8 @@ export default new Router({
       component: HelloWorld
     },{
       path: '/index',
-      name: 'myweb-header',
-      component: Header
+      name: '主页',
+      component: index
     }
   ]
 })
