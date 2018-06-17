@@ -1,12 +1,23 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+  <el-container class="body-container " id="app">
+    <el-header>
+      <myweb-header></myweb-header>
+    </el-header>
+    <el-container>
+      <el-main>Main</el-Main>
+      <el-aside class="hidden-xs-only">Aside</el-Aside>
+    </el-container>
+    <el-footer>Footer</el-footer>
+  </el-container>
 </template>
 
 <script>
+import mywebHeader from './components/header'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    'mywebHeader': mywebHeader,
+  }
 }
 </script>
 
@@ -16,4 +27,19 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+  .el-container{
+    background: #369;
+  }
+  .el-header{
+    background: #67C23A;
+  }
+  .el-main{
+    background: #F56C6C;
+  }
+  .el-aside{
+    background: #E6A23C;
+  }
+  .el-footer{
+    background: #409EFF;
+  }
 </style>

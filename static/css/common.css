@@ -1,9 +1,22 @@
 .no-padding{
-  padding: 0;
+  padding: 0!important;
 }
 .no-margin{
-  margin: 0;
+  margin: 0!important;
 }
 .with-padding{
   padding: 5px 12px;
+}
+.body-container{
+  margin: 0 auto;
+  max-width: 1150px;
+  padding: 0 60px;
+}
+
+@media print,screen and (max-width: 768px ) {
+  .body-container{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
 }
