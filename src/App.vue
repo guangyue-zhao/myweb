@@ -4,7 +4,9 @@
       <myweb-header></myweb-header>
     </el-header>
     <el-container>
-      <el-main>Main</el-Main>
+      <el-main>
+        <router-view></router-view>
+      </el-Main>
       <el-aside class="hidden-xs-only">Aside</el-Aside>
     </el-container>
     <el-footer>Footer</el-footer>

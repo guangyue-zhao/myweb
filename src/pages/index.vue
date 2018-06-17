@@ -1,5 +1,7 @@
 <template lang="html">
-  
+  <el-col>
+    首页
+  </el-col>
 </template>
 
 <script>
