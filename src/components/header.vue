@@ -1,23 +1,95 @@
 <template lang="html">
-    <el-row :gutter="0">
-      <el-col :span="10" class="<hidden-xs-only></hidden-xs-only>">123</el-col>
-      <el-col :span="14">
-        <ul class="clearfix">
-          <li class="item"><router-link to="/">首页</router-link> </li>
-          <li class="item"><router-link to="/archive/">归档</router-link></li>
-          <li class="item"><router-link to="/resource/">资源</router-link></li>
-          <li class="item"><router-link to="/about/">关于</router-link></li>
-        </ul>
-      </el-col>
-    </el-row>
+  <el-row :gutter="0">
+    <el-col :sm="10" :xs="24" class="hidden-xs-only">
+      <div class="logo">
+        <img src="" alt="">
+        <div class="logoname">广越</div>
+        <p class="motto">望时而待之，熟与应时而使之！</p>
+      </div>
+    </el-col>
+    <el-col :sm="14" :xs="24" class="pull-tar" >
+      <el-menu  :default-active="activeIndex"  text-color="#101010" active-text-color="#0098FE" class="" mode="horizontal" @select="handleSelect">
+        <el-menu-item index="1"><router-link to="/">首页</router-link> </el-menu-item>
+        <el-menu-item index="2"><router-link to="/archive/">归档</router-link></el-menu-item>
+        <el-menu-item index="3"><router-link to="/resource/">资源</router-link></el-menu-item>
+        <el-menu-item index="4"><router-link to="/about/">关于</router-link></el-menu-item>
+      </el-menu>
+    </el-col>
+  </el-row>
 </template>
 
 <script>
   export default {
     name: 'myweb-header',
+    data() {
+      return {
+        activeIndex: '1',
+        activeIndex2: '1'
+      };
+    },
+    methods: {
+      handleSelect(key, keyPath) {
+        console.log(key, keyPath);
+      }
+    }
   }
+
 </script>
 
 <style lang="less" scoped>
-
+  .el-menu{
+    display: inline-block;
+  }
+  .el-menu-item{
+    height: 50px;
+    padding: 0;
+    overflow: hidden;
+  }
+  .el-menu-item a{
+    color: rgba(10,10,10,.7);
+    display: block;
+    padding: 0 30px;
+    font-size: 16px;
+    transition: all .5s;
+  }
+  .el-menu-item.is-active a{
+    color: rgba(10,10,10,1)!important;
+  }
+  .el-menu-item a:hover{
+    color: rgba(10,10,10,1)!important;
+  }
+  .el-menu--horizontal {
+    border-bottom: 0;
+  }
+  .logo{
+    text-indent: 100px;
+    height: 50px;
+    position: relative;
+  }
+  .logo img{
+    width: 80px;
+    height: 80px;
+    background: #369;
+    border-radius: 50%;
+    position: absolute;
+    vertical-align:bottom;
+    bottom: -12px;
+  }
+  .logo .logoname{
+    height: 30px;
+    font-size: 26px;
+    color: #333;
+  }
+  .logo .motto{
+    height: 20px;
+    font-size: 14px;
+    margin: 0;
+    margin-top: 5px;
+    color: #666;
+  }
+  @media print,screen and (max-width: 768px ) {
+    .el-menu-item a{
+      padding: 0 20px;;
+    }
+  }
 </style>

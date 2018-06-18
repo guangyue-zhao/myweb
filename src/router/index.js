@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import mywebHeader from '@/components/header'
 import index from '@/pages/index'
 import archive from '@/pages/archive'

@@ -1,6 +1,6 @@
 <template>
   <el-container class="body-container " id="app">
-    <el-header>
+    <el-header class="no-padding">
       <myweb-header></myweb-header>
     </el-header>
     <el-container>
@@ -30,13 +30,14 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 }
   .el-container{
-    background: #369;
+    /* background: #369; */
   }
   .el-header{
-    background: #67C23A;
+    margin: 30px 0 10px 0;
+    /* background: #67C23A; */
   }
   .el-main{
-    background: #F56C6C;
+    /* background: #F56C6C; */
   }
   .el-aside{
     background: #E6A23C;
