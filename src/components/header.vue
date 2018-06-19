@@ -3,7 +3,7 @@
     <el-col :sm="10" :xs="24" class="hidden-xs-only">
       <div class="logo">
         <img src="" alt="">
-        <div class="logoname">广越</div>
+        <div class="logoname">前端进阶日记</div>
         <p class="motto">望时而待之，熟与应时而使之！</p>
       </div>
     </el-col>
@@ -46,19 +46,31 @@
     overflow: hidden;
   }
   .el-menu-item a{
-    color: rgba(10,10,10,.7);
+    color: #666;
     display: block;
     padding: 0 30px;
     font-size: 16px;
     transition: all .5s;
   }
-  .el-menu-item span{
-    vertical-align: top;
-  }
   .el-menu-item.is-active a{
     color: rgba(10,10,10,1)!important;
   }
-  .el-menu-item a:hover{
+  .el-menu-item:hover a{
+    color: rgba(10,10,10,1)!important;
+  }
+  .el-menu-item span{
+    vertical-align: top;
+  }
+  .el-menu-item .iconfont{
+    vertical-align: top;
+    margin-right: 3px;
+    transition: all .5s;
+    color: #666;
+  }
+  .el-menu-item:hover .iconfont{
+    color: rgba(10,10,10,1)!important;
+  }
+  .el-menu-item.is-active .iconfont{
     color: rgba(10,10,10,1)!important;
   }
   .el-menu--horizontal {

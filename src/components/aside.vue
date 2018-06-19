@@ -7,7 +7,7 @@
     </el-col>
     <el-card class="box-card">
       <div slot="header" class="clearfix">
-        <span>分类</span>
+        <span><i class="iconfont icon-wenjian icon"></i></i>分类</span>
       </div>
       <div v-for="o in 4" :key="o" class="text item">
         {{'列表内容 ' + o }}
@@ -15,7 +15,7 @@
     </el-card>
     <el-card class="box-card">
       <div slot="header" class="clearfix">
-        <span>友情链接</span>
+        <span><i class="iconfont icon icon-lianjieguanlian"></i>友情链接</span>
       </div>
       <div v-for="o in 4" :key="o" class="text item">
         {{'列表内容 ' + o }}
@@ -37,7 +37,11 @@ export default {
 
 <style lang="less" scoped>
   .el-row{
-    font-family: "Microsoft YaHei","微软雅黑",Arial,sans-serif
+    font-family: "Microsoft YaHei","微软雅黑",Arial,sans-serif;
+  }
+  .el-card{
+    font-family: "Microsoft YaHei","微软雅黑",Arial,sans-serif;
+    color: #666;
   }
   .clock{
     text-align: center;
@@ -47,7 +51,9 @@ export default {
     text-align: left;
     text-indent: 30px;
   }
-
+  .icon{
+    margin-right: 5px;
+  }
   .text {
      font-size: 14px;
    }

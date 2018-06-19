@@ -1,6 +1,6 @@
 <template lang="html">
   <el-col>
-    关于
+    <h1 class="aboutme">关于我</h1>
   </el-col>
 </template>
 
@@ -10,4 +10,8 @@ export default {
 </script>
 
 <style lang="less" scroped>
+  .aboutme{
+    font-size:24px;
+    color:#3c3c3c;
+  }
 </style>

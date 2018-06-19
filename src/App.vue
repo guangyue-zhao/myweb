@@ -11,18 +11,22 @@
         <myweb-aside></myweb-aside>
       </el-Aside>
     </el-container>
-    <el-footer>Footer</el-footer>
+    <el-footer>
+      <myweb-footer></myweb-footer>
+    </el-footer>
   </el-container>
 </template>
 
 <script>
 import mywebHeader from './components/header'
 import mywebAside from './components/aside'
+import mywebFooter from './components/footer'
 export default {
   name: 'App',
   components: {
     'mywebHeader': mywebHeader,
     'mywebAside': mywebAside,
+    'mywebFooter': mywebFooter,
   }
 }
 </script>
@@ -44,11 +48,11 @@ export default {
   }
   .el-main{
     /* background: #F56C6C; */
+    padding: 0 10px;
   }
   .el-aside{
-    /* background: #369; */
   }
   .el-footer{
-    background: #409EFF;
+    margin-top: 20px;
   }
 </style>
