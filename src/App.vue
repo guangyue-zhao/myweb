@@ -3,11 +3,13 @@
     <el-header class="no-padding">
       <myweb-header></myweb-header>
     </el-header>
-    <el-container>
+    <el-container class="container">
       <el-main>
         <router-view></router-view>
       </el-Main>
-      <el-aside class="hidden-xs-only">Aside</el-Aside>
+      <el-aside class="hidden-xs-only">
+        <myweb-aside></myweb-aside>
+      </el-Aside>
     </el-container>
     <el-footer>Footer</el-footer>
   </el-container>
@@ -15,10 +17,12 @@
 
 <script>
 import mywebHeader from './components/header'
+import mywebAside from './components/aside'
 export default {
   name: 'App',
   components: {
     'mywebHeader': mywebHeader,
+    'mywebAside': mywebAside,
   }
 }
 </script>
@@ -29,18 +33,20 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-  .el-container{
+  .container{
     /* background: #369; */
+    padding-top: 30px;
+    border-top: 2px solid #ddd;
   }
   .el-header{
-    margin: 30px 0 10px 0;
+    margin: 44px 0 16px 0;
     /* background: #67C23A; */
   }
   .el-main{
     /* background: #F56C6C; */
   }
   .el-aside{
-    background: #E6A23C;
+    /* background: #369; */
   }
   .el-footer{
     background: #409EFF;

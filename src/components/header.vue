@@ -9,10 +9,10 @@
     </el-col>
     <el-col :sm="14" :xs="24" class="pull-tar" >
       <el-menu  :default-active="activeIndex"  text-color="#101010" active-text-color="#0098FE" class="" mode="horizontal" @select="handleSelect">
-        <el-menu-item index="1"><router-link to="/">首页</router-link> </el-menu-item>
-        <el-menu-item index="2"><router-link to="/archive/">归档</router-link></el-menu-item>
-        <el-menu-item index="3"><router-link to="/resource/">资源</router-link></el-menu-item>
-        <el-menu-item index="4"><router-link to="/about/">关于</router-link></el-menu-item>
+        <el-menu-item index="1"><router-link to="/"><i class="iconfont icon-zhuye"></i><span>首页</span></router-link> </el-menu-item>
+        <el-menu-item index="2"><router-link to="/archive/"><i class="iconfont icon-fenlei201"></i><span>归档</span></router-link></el-menu-item>
+        <el-menu-item index="3"><router-link to="/resource/"><i class="iconfont icon-ziyuanku"></i><span>资源</span></router-link></el-menu-item>
+        <el-menu-item index="4"><router-link to="/about/"><i class="iconfont icon icon-wode-active"></i><span>关于</span></router-link></el-menu-item>
       </el-menu>
     </el-col>
   </el-row>
@@ -52,6 +52,9 @@
     font-size: 16px;
     transition: all .5s;
   }
+  .el-menu-item span{
+    vertical-align: top;
+  }
   .el-menu-item.is-active a{
     color: rgba(10,10,10,1)!important;
   }
@@ -73,7 +76,7 @@
     border-radius: 50%;
     position: absolute;
     vertical-align:bottom;
-    bottom: -12px;
+    bottom: -10px;
   }
   .logo .logoname{
     height: 30px;
