@@ -1,8 +1,8 @@
 <template lang="html">
-  <el-row :gutter="0">
-    <el-col :sm="10" :xs="24" class="hidden-xs-only">
+  <el-row :gutter="0" class="clearfix">
+    <el-col :sm="10" :xs="24" class="">
       <div class="logo">
-        <img src="" alt="">
+        <img src="/static/imgs/logo.jpg" alt="">
         <div class="logoname">前端进阶日记</div>
         <p class="motto">望时而待之，熟与应时而使之！</p>
       </div>
@@ -36,7 +36,7 @@
 
 </script>
 
-<style lang="less" scoped>
+<style lang="less" scoped >
   .el-menu{
     display: inline-block;
   }
@@ -105,6 +105,11 @@
   @media print,screen and (max-width: 768px ) {
     .el-menu-item a{
       padding: 0 20px;;
+    }
+    .logo{
+      margin-bottom: 20px;
+      padding-left: 20px;
+      position: relative;
     }
   }
 </style>

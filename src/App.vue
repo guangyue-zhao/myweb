@@ -54,5 +54,12 @@ export default {
   }
   .el-footer{
     margin-top: 20px;
+    border-top: 2px solid #ddd;
+  }
+  @media print,screen and (max-width: 768px ) {
+    .el-header{
+      margin-top: 30px;
+      height: auto!important;
+    }
   }
 </style>

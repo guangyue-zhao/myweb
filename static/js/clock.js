@@ -6,8 +6,6 @@ document.body.onload = function(){
   var ctx = dom.getContext('2d');//设置canvas
   var width=ctx.canvas.width;//获取canvas的宽度
   var height=ctx.canvas.height;//获取canvas的长度
-  console.log(width)
-  console.log(height)
   var r=width/2;//得到半径
   var rem=width/300;//为了调节大小设置比例
 

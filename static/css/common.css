@@ -1,6 +1,18 @@
 a{
   text-decoration: none;
 }
+.clearfix {
+  zoom: 1;
+}
+.clearfix:after {
+  clear: both;
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+
 .no-padding{
   padding: 0!important;
 }
@@ -39,6 +51,10 @@ a{
 .el-card__body{
   border: 1px solid #ccc!important;
 }
+article{
+  padding-top: 10px;
+  padding-right: 30px;
+}
 @media print,screen and (max-width: 768px ) {
   .body-container{
     margin: 0;
@@ -47,5 +63,9 @@ a{
   }
   .el-col.pull-tar{
     text-align: center;
+  }
+  article{
+    padding-top: 10px;
+    padding-right: 0;
   }
 }

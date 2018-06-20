@@ -5,6 +5,7 @@ import index from '@/pages/index'
 import archive from '@/pages/archive'
 import resource from '@/pages/resource'
 import about from '@/pages/about'
+import viewArticle from '@/pages/article_detail'
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/about',
       name: '关于',
       component: about
+    },
+    {
+      path: '/viewArticle',
+      name: '查看文章',
+      component: viewArticle
     },
   ]
 })
