@@ -5,8 +5,8 @@
       <p class="description">青春须早为,岂能长少年。</p>
       <p class="pull-tar"> &mdash;&mdash;&nbsp; 孟郊《劝学》</p>
     </el-col>
-    <el-card class="box-card">
-      <div slot="header" class="clearfix">
+    <el-card class="box-card" body-style="border: 1px solid #dfdfdf">
+      <div slot="header" class="clearfix el-">
         <span><i class="iconfont icon-wenjian icon"></i></i>分类</span>
       </div>
       <div v-for="o in 4" :key="o" class="text item">
@@ -41,11 +41,16 @@ export default {
   }
   .el-card{
     font-family: "Microsoft YaHei","微软雅黑",Arial,sans-serif;
-    color: #666;
+    color: #333;
+    border: 0 none;
   }
+
   .clock{
     text-align: center;
     padding: 20px 0;
+  }
+  canvas{
+    margin-bottom: 20px;
   }
   .description{
     text-align: left;
@@ -58,21 +63,14 @@ export default {
      font-size: 14px;
    }
 
- .item {
+  .item {
    margin-bottom: 18px;
- }
-
- .clearfix:before,
- .clearfix:after {
-   display: table;
-   content: "";
- }
- .clearfix:after {
-   clear: both
- }
-
- .box-card {
+  }
+  .box-card {
    width: calc(100% - 2px);
    margin-bottom: 20px;
- }
+  }
+  .box-card .el-card__header{
+    background: #000;
+  }
 </style>

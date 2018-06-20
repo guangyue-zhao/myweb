@@ -27,6 +27,18 @@ a{
 .pull-tar{
   text-align: right;
 }
+/* 卡片默认样式修改 */
+.el-card__header {
+  border-bottom: 0;
+  background: #333;
+  color: #fff;
+}
+.el-card__header .icon{
+  color: #fff;
+}
+.el-card__body{
+  border: 1px solid #ccc!important;
+}
 @media print,screen and (max-width: 768px ) {
   .body-container{
     margin: 0;
