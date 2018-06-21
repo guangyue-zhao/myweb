@@ -8,11 +8,11 @@
       </div>
     </el-col>
     <el-col :sm="14" :xs="24" class="pull-tar" >
-      <el-menu  :default-active="activeIndex"  text-color="#101010" active-text-color="#0098FE" class="" mode="horizontal" @select="handleSelect">
-        <el-menu-item index="1"><router-link to="/"><i class="iconfont icon-zhuye"></i><span>首页</span></router-link> </el-menu-item>
-        <el-menu-item index="2"><router-link to="/archive/"><i class="iconfont icon-fenlei201"></i><span>归档</span></router-link></el-menu-item>
-        <el-menu-item index="3"><router-link to="/resource/"><i class="iconfont icon-ziyuanku"></i><span>资源</span></router-link></el-menu-item>
-        <el-menu-item index="4"><router-link to="/about/"><i class="iconfont icon icon-wode-active"></i><span>关于</span></router-link></el-menu-item>
+      <el-menu  :router='true' :default-active="$route.path"  text-color="#666" active-text-color="#0098fe" class="" mode="horizontal" @select="handleSelect">
+        <el-menu-item index="/index/" :route="{ path :'/index/' }"><i class="iconfont icon-zhuye"></i><span>首页</span></el-menu-item>
+        <el-menu-item index="/archive/" :route="{ path :'/archive/' }"><i class="iconfont icon-fenlei201"></i><span>归档</span></el-menu-item>
+        <el-menu-item index="/resource/" :route="{ path :'/resource/' }"><i class="iconfont icon-ziyuanku"></i><span>资源</span></el-menu-item>
+        <el-menu-item index="/about/" :route="{ path :'/about/' }"><i class="iconfont icon icon-wode-active"></i><span>关于</span></el-menu-item>
       </el-menu>
     </el-col>
   </el-row>
@@ -23,13 +23,20 @@
     name: 'myweb-header',
     data() {
       return {
-        activeIndex: '1',
-        activeIndex2: '1'
+
       };
     },
     methods: {
       handleSelect(key, keyPath) {
-        console.log(key, keyPath);
+        // this.activeIndex = key;
+        // console.log(this.$route.path);
+      },
+    },
+    computed: {
+      activeIndex(){
+        console.log(this.$router.path)
+        console.log('adsad')
+        return this.$router.path
       }
     }
   }
@@ -37,25 +44,20 @@
 </script>
 
 <style lang="less" scoped >
+
   .el-menu{
     display: inline-block;
   }
   .el-menu-item{
     height: 50px;
-    padding: 0;
-    overflow: hidden;
-  }
-  .el-menu-item a{
-    color: #666;
-    display: block;
-    padding: 0 30px;
+    padding: 0 25px;
     font-size: 16px;
     transition: all .5s;
   }
-  .el-menu-item.is-active a{
+  .el-menu-item.is-active{
     color: rgba(10,10,10,1)!important;
   }
-  .el-menu-item:hover a{
+  .el-menu-item:hover{
     color: rgba(10,10,10,1)!important;
   }
   .el-menu-item span{

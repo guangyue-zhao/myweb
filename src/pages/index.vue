@@ -30,7 +30,7 @@
           <p>  <strong>先谈谈前端监控的现状</strong><br>  目前市面上的前端监控系统，多是记录资源加载时长、系统抛错、统计埋点、UV/PV…<br>  对开发人员来说就是嵌入监控js脚本，监控的前提是：<strong>该监控脚本能正常加载并执行</strong><br>  那么问题就来了，<strong>假如某个站点CDN、DNS出现异常，监控脚本完全没机会加载（更不用说运行了）</strong><br>  站点Owner可能很长时间都不知道自己的网站挂了？！监控服务形同虚设…</p>
         </div>
         <el-row class="btn">
-          <el-button>阅读全文<i class="el-icon-d-arrow-right"></i></el-button>
+          <router-link :to="{ name: '', params: {} }"><el-button>阅读全文<i class="el-icon-d-arrow-right"></i></el-button></router-link>
         </el-row>
       </el-row>
     </el-col>
