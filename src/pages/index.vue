@@ -55,10 +55,26 @@
 </template>
 
 <script>
+
 import mywebHeader from '../components/header.vue';
+import axios from 'axios'
+
+
 export default {
   data(){
     return {}
+  },
+  created(){
+    this.loadArticle();
+  },
+  methods:{
+    loadArticle(){
+      axios('http://www.zhaoguangyue.cn/api/index').then(function(res){
+        console.log( res.data );
+      }).then(function(){
+
+      });
+    }
   }
 }
 </script>

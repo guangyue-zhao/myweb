@@ -11,7 +11,6 @@ import '../static/font/iconfont.css';
 import 'element-ui/lib/theme-chalk/display.css';
 import '../static/js/clock.js';
 
-
 Vue.config.productionTip = false
 Vue.use(ElementUI);
 /* eslint-disable no-new */

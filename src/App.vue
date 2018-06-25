@@ -17,6 +17,7 @@
   </el-container>
 </template>
 
+
 <script>
 import mywebHeader from './components/header'
 import mywebAside from './components/aside'
