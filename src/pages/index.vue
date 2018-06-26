@@ -23,19 +23,27 @@
 
 import mywebHeader from '../components/header.vue';
 import axios from 'axios'
+<<<<<<< HEAD
 import moment from 'moment'
+=======
+>>>>>>> 6bc1f7161a05cc7fa5fd8d1da3de89f523df89e1
 
 
 export default {
   data(){
+<<<<<<< HEAD
     return {
       arts:{},
       artId:''
     }
+=======
+    return {}
+>>>>>>> 6bc1f7161a05cc7fa5fd8d1da3de89f523df89e1
   },
   created(){
     this.loadArticle();
   },
+<<<<<<< HEAD
   filters:{
     dateformat(time, data ){
       return moment(time).format(data);
@@ -49,6 +57,15 @@ export default {
     },
     getId(event){
       this.$store.commit('VIEW_ARTICLE',event);
+=======
+  methods:{
+    loadArticle(){
+      axios('http://www.zhaoguangyue.cn/api/index').then(function(res){
+        console.log( res.data );
+      }).then(function(){
+
+      });
+>>>>>>> 6bc1f7161a05cc7fa5fd8d1da3de89f523df89e1
     }
   }
 }
