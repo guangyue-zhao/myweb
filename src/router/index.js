@@ -13,6 +13,10 @@ export default new Router({
   mode: 'history',
   routes: [
     {
+      path: '/',
+      redirect:'/index'
+    },
+    {
       path: '/index',
       name: '首页',
       component: index
@@ -35,6 +39,7 @@ export default new Router({
     {
       path: '/viewArticle',
       name: '查看文章',
+      query:{},
       component: viewArticle
     },
   ]

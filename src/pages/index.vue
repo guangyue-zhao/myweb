@@ -1,53 +1,18 @@
 <template lang="html">
   <article class="clearfix">
-    <el-col class="article">
+    <el-col class="article" v-for="(item,index) in arts" :key="index">
       <el-row class="article-header">
-        <h2 class="article-title">前端监控--Puppeteer终探</h2>
+        <h2 class="article-title">{{item.title}}</h2>
         <p class="article-desc">
-          <i class="iconfont icon-riqi icon"> </i><time>2018.5.1</time>&nbsp;&nbsp;
-          <i class="iconfont icon-wenjianjia"> </i><span class="category">Node.js</span>
+          <i class="iconfont icon-riqi icon"> </i><time>{{ item.createTime | dateformat( 'MMM. DD YYYY') }}</time>&nbsp;&nbsp;
+          <i class="iconfont icon-wenjianjia"> </i><span class="category">{{item.category.name}}</span>
         </p>
       </el-row>
       <el-row class="article-body">
-        <div class="article-summary">
-          <p>  <strong>先谈谈前端监控的现状</strong><br>  目前市面上的前端监控系统，多是记录资源加载时长、系统抛错、统计埋点、UV/PV…<br>  对开发人员来说就是嵌入监控js脚本，监控的前提是：<strong>该监控脚本能正常加载并执行</strong><br>  那么问题就来了，<strong>假如某个站点CDN、DNS出现异常，监控脚本完全没机会加载（更不用说运行了）</strong><br>  站点Owner可能很长时间都不知道自己的网站挂了？！监控服务形同虚设…</p>
+        <div class="article-summary" v-html="item.content">
         </div>
         <el-row class="btn">
-          <el-button>阅读全文<i class="el-icon-d-arrow-right"></i></el-button>
-        </el-row>
-      </el-row>
-    </el-col>
-    <el-col class="article">
-      <el-row class="article-header">
-        <h2 class="article-title">前端监控--Puppeteer终探</h2>
-        <p class="article-desc">
-          <i class="iconfont icon-riqi icon"> </i><time>2018.5.1</time>&nbsp;&nbsp;
-          <i class="iconfont icon-wenjianjia"> </i><span class="category">Node.js</span>
-        </p>
-      </el-row>
-      <el-row class="article-body">
-        <div class="article-summary">
-          <p>  <strong>先谈谈前端监控的现状</strong><br>  目前市面上的前端监控系统，多是记录资源加载时长、系统抛错、统计埋点、UV/PV…<br>  对开发人员来说就是嵌入监控js脚本，监控的前提是：<strong>该监控脚本能正常加载并执行</strong><br>  那么问题就来了，<strong>假如某个站点CDN、DNS出现异常，监控脚本完全没机会加载（更不用说运行了）</strong><br>  站点Owner可能很长时间都不知道自己的网站挂了？！监控服务形同虚设…</p>
-        </div>
-        <el-row class="btn">
-          <router-link :to="{ name: '', params: {} }"><el-button>阅读全文<i class="el-icon-d-arrow-right"></i></el-button></router-link>
-        </el-row>
-      </el-row>
-    </el-col>
-    <el-col class="article">
-      <el-row class="article-header">
-        <h2 class="article-title">前端监控--Puppeteer终探</h2>
-        <p class="article-desc">
-          <i class="iconfont icon-riqi icon"> </i><time>2018.5.1</time>&nbsp;&nbsp;
-          <i class="iconfont icon-wenjianjia"> </i><span class="category">Node.js</span>
-        </p>
-      </el-row>
-      <el-row class="article-body">
-        <div class="article-summary">
-          <p>  <strong>先谈谈前端监控的现状</strong><br>  目前市面上的前端监控系统，多是记录资源加载时长、系统抛错、统计埋点、UV/PV…<br>  对开发人员来说就是嵌入监控js脚本，监控的前提是：<strong>该监控脚本能正常加载并执行</strong><br>  那么问题就来了，<strong>假如某个站点CDN、DNS出现异常，监控脚本完全没机会加载（更不用说运行了）</strong><br>  站点Owner可能很长时间都不知道自己的网站挂了？！监控服务形同虚设…</p>
-        </div>
-        <el-row class="btn">
-          <router-link to="/viewArticle"><el-button>阅读全文<i class="el-icon-d-arrow-right"></i></el-button></router-link>
+          <router-link :to="{ path: '../viewArticle' ,query:{'_id': item._id }}" @click.native = 'getId(item.id)' ><el-button>阅读全文<i class="el-icon-d-arrow-right"></i></el-button></router-link>
         </el-row>
       </el-row>
     </el-col>
@@ -55,10 +20,36 @@
 </template>
 
 <script>
+
 import mywebHeader from '../components/header.vue';
+import axios from 'axios'
+import moment from 'moment'
+
+
 export default {
   data(){
-    return {}
+    return {
+      arts:{},
+      artId:''
+    }
+  },
+  created(){
+    this.loadArticle();
+  },
+  filters:{
+    dateformat(time, data ){
+      return moment(time).format(data);
+    }
+  },
+  methods:{
+    loadArticle(){
+      axios('http://www.zhaoguangyue.cn/api/index').then( (response) => {
+        this.arts = response.data.data;
+      });
+    },
+    getId(event){
+      this.$store.commit('VIEW_ARTICLE',event);
+    }
   }
 }
 </script>
