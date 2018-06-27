@@ -9,16 +9,19 @@
       <div slot="header" class="clearfix el-">
         <span><i class="iconfont icon-wenjian icon"></i></i>分类</span>
       </div>
-      <div v-for="o in 4" :key="o" class="text item">
-        {{'列表内容 ' + o }}
+      <div class="text item" v-for = "(item,index) in categories" :key="index">
+        <router-link class="item-content" :to="{ path: '/archive/category' ,query:{'_id': item._id }}">{{item.name}}</router-link>
       </div>
+
     </el-card>
     <el-card class="box-card">
       <div slot="header" class="clearfix">
-        <span><i class="iconfont icon icon-lianjieguanlian"></i>友情链接</span>
+        <span><i class="iconfont icon icon-lianjieguanlian"></i>我的信息</span>
       </div>
-      <div class="text item" v-for = "(item,index) in categories" :key="index">
-        <router-link class="item-content" :to="{ path: '/archive/category' ,query:{'_id': item._id }}">{{item.name}}</router-link>
+
+      <div class="text item">
+        <h2>赵广越</h2>
+        <a href="https://github.com/guangyue-zhao" target="_blank"><i class="iconfont icon-github icon"></i>github/guangyue_zhao</a>
       </div>
     </el-card>
   </el-row>
@@ -77,6 +80,9 @@ export default {
   .item {
    margin-bottom: 18px;
   }
+  .item a{
+    color: #3c3c3c;
+  }
   .box-card {
    width: calc(100% - 2px);
    margin-bottom: 20px;
@@ -84,4 +90,8 @@ export default {
   .box-card .el-card__header{
     background: #000;
   }
+ .icon{
+   margin-right: 5px;
+   vertical-align: -2px;
+ }
 </style>

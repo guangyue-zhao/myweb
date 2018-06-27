@@ -1,38 +1,29 @@
 <template lang="html">
   <el-row>
     <h1 class="pool-title">前端资源推荐</h1>
-    <el-col class="category">
-      <h2>CSS、JS</h2>
-      <ul>
-        <li><a href="">前端</a></li>
-      </ul>
-    </el-col>
-    <el-col class="category">
-      <h2>CSS、JS</h2>
-      <ul>
-        <li><a href="">前端</a></li>
-      </ul>
-    </el-col>
-    <el-col class="category">
-      <h2>CSS、JS</h2>
-      <ul>
-        <li><a href="">前端</a></li>
-      </ul>
-    </el-col>
-    <el-col class="category">
-      <h2>CSS、JS</h2>
-      <ul>
-        <li><a href="">前端</a></li>
-      </ul>
+    <el-col>
+      {{data.content}}
     </el-col>
   </el-row>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   data(){
     return {
-
+      data:{}
+    }
+  },
+  created(){
+    this.getResource();
+  },
+  methods:{
+    getResource(){
+      axios.get('http://www.zhaoguangyue.cn/api/resource').then( (response) => {
+        this.data = response.data.data;
+        console.log(this.data);
+      } )
     }
   }
 }

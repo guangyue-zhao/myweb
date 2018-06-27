@@ -15,16 +15,19 @@ export default {
   data(){
     return {
       categorys:[],
-      getId: this.$route.query._id
     }
+  },
+  watch: {
+    // 如果路由有变化，会再次执行该方法
+    '$route': 'getArticlesList'
   },
   created(){
     this.getArticlesList();
   },
   methods:{
     getArticlesList(){
-      axios(`http://www.zhaoguangyue.cn/api/archive/category?_id=${this.getId}`).then( (response) => {
-        console.log(response.data);
+      axios(`http://www.zhaoguangyue.cn/api/archive/category?_id=${this.$route.query._id}`).then( (response) => {
+
         this.categorys = response.data.data;
       });
     }

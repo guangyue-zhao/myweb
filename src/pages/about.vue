@@ -1,11 +1,32 @@
 <template lang="html">
   <el-col>
     <h1 class="aboutme">关于我</h1>
+    <el-row>
+      {{data.content}}
+    </el-row>
   </el-col>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
+  data(){
+    return {
+      data:{}
+    }
+  },
+  created(){
+    this.getAbout();
+  },
+  methods:{
+    getAbout(){
+      axios.get('http://www.zhaoguangyue.cn/api/about').then( (response) => {
+        console.log(response.data)
+        this.data = response.data.data;
+      } )
+    }
+  }
 }
 </script>
 
