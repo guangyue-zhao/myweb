@@ -9,7 +9,7 @@
         </p>
       </el-row>
       <el-row class="article-body">
-        <div class="article-summary" v-html="item.content">
+        <div class="article-summary" v-html="item.introduction">
         </div>
         <el-row class="btn">
           <router-link :to="{ path: '../viewArticle' ,query:{'_id': item._id }}" @click.native = 'getId(item.id)' ><el-button>阅读全文<i class="el-icon-d-arrow-right"></i></el-button></router-link>

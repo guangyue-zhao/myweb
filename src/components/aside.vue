@@ -20,8 +20,10 @@
       </div>
 
       <div class="text item">
-        <h2>赵广越</h2>
-        <a href="https://github.com/guangyue-zhao" target="_blank"><i class="iconfont icon-github icon"></i>github/guangyue_zhao</a>
+        <p><i class="iconfont icon-qq mr5"></i>583547322</p>
+        <p><i class="iconfont icon-big-WeChat icon" ></i>guangyue_zhao</p>
+        <p><a href="https://github.com/guangyue-zhao" target="_blank"><i class="iconfont icon-github icon"></i>github/guangyue_zhao</a></p>
+        <p><a href="https://weibo.com/3958438475/profile?topnav=1&wvr=6&is_all=1" target="_blank"><i class="iconfont icon-weibo icon"></i>广越zgy</a></p>
       </div>
     </el-card>
   </el-row>
@@ -93,5 +95,11 @@ export default {
  .icon{
    margin-right: 5px;
    vertical-align: -2px;
+ }
+ .mr5{
+   margin-right: 5px;
+ }
+ .item a:hover{
+   color: #0098fe;
  }
 </style>
