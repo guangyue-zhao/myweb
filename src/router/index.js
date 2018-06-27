@@ -6,6 +6,7 @@ import archive from '@/pages/archive'
 import resource from '@/pages/resource'
 import about from '@/pages/about'
 import viewArticle from '@/pages/article_detail'
+import categoryDetail from '@/pages/category_detail'
 
 Vue.use(Router)
 
@@ -41,6 +42,12 @@ export default new Router({
       name: '查看文章',
       query:{},
       component: viewArticle
+    },
+    {
+      path: '/archive/category',
+      name: '标签查询',
+      query:{},
+      component: categoryDetail
     },
   ]
 })

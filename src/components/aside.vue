@@ -17,20 +17,31 @@
       <div slot="header" class="clearfix">
         <span><i class="iconfont icon icon-lianjieguanlian"></i>友情链接</span>
       </div>
-      <div v-for="o in 4" :key="o" class="text item">
-        {{'列表内容 ' + o }}
+      <div class="text item" v-for = "(item,index) in categories" :key="index">
+        <router-link class="item-content" :to="{ path: '/archive/category' ,query:{'_id': item._id }}">{{item.name}}</router-link>
       </div>
     </el-card>
   </el-row>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'mywebAside',
   data(){
       return {
-
+        categories:{}
     };
+  },
+  created(){
+    this.getlinks();
+  },
+  methods:{
+    getlinks(){
+      axios('http://www.zhaoguangyue.cn/api/getcategory').then( (response) => {
+          this.categories = response.data.data;
+      })
+    }
   }
 }
 </script>
