@@ -133,6 +133,9 @@ export default {
   .sort-item .item-content{
     color: #000;
   }
+  .sort-item .item-content:hover{
+    color: #0098fe;
+  }
 
 
   .sort-item .line{
