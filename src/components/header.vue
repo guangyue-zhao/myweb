@@ -91,6 +91,7 @@
     position: absolute;
     vertical-align:bottom;
     bottom: -10px;
+    left: 0;
   }
   .logo .logoname{
     height: 30px;
