@@ -43,7 +43,7 @@ export default {
   },
   methods:{
     loadArticle(){
-      axios('http://www.zhaoguangyue.cn/api/index').then( (response) => {
+      axios('http://api.zhaoguangyue.cn/api/index').then( (response) => {
         this.arts = response.data.data;
       });
     },

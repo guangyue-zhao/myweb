@@ -38,7 +38,7 @@ export default {
   },
   methods:{
     getArticle(){
-      axios.get(`http://www.zhaoguangyue.cn/api/viewArticle?_id=${this.artId}`).then( (response) => {
+      axios.get(`http://api.zhaoguangyue.cn/api/viewArticle?_id=${this.artId}`).then( (response) => {
         this.article = response.data.data
       })
     }

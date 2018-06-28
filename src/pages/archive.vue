@@ -43,7 +43,7 @@ export default {
   },
   methods:{
     getAll(){
-      axios('http://www.zhaoguangyue.cn/api/archive').then( (response) => {
+      axios('http://api.zhaoguangyue.cn/api/archive').then( (response) => {
         for(var i = 0;i<response.data.data.length;i++){
           var year = moment(response.data.data[i].createTime).year();
           // 如果data没有值，则创建，否则遍历 判断  填充
