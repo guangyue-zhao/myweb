@@ -1,12 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import mywebHeader from '@/components/header'
-import index from '@/pages/index'
-import archive from '@/pages/archive'
-import resource from '@/pages/resource'
-import about from '@/pages/about'
-import viewArticle from '@/pages/article_detail'
-import categoryDetail from '@/pages/category_detail'
 
 Vue.use(Router)
 
@@ -20,34 +13,34 @@ export default new Router({
     {
       path: '/index',
       name: '首页',
-      component: index
+      component: resolve => require(['@/pages/index'], resolve),
     },
     {
       path: '/archive',
       name: '归档',
-      component: archive
+      component: resolve => require(['@/pages/archive'], resolve)
     },
     {
       path: '/resource',
       name: '资源',
-      component: resource
+      component: resolve => require(['@/pages/resource'], resolve)
     },
     {
       path: '/about',
       name: '关于',
-      component: about
+      component: resolve => require(['@/pages/about'], resolve)
     },
     {
       path: '/viewArticle',
       name: '查看文章',
       query:{},
-      component: viewArticle
+      component: resolve => require(['@/pages/article_detail'], resolve)
     },
     {
       path: '/archive/category',
       name: '标签查询',
       query:{},
-      component: categoryDetail
+      component: resolve => require(['@/pages/category_detail'], resolve)
     },
   ]
 })

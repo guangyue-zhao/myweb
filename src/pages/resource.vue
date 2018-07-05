@@ -20,7 +20,7 @@ export default {
   },
   methods:{
     getResource(){
-      axios.get('http://api.zhaoguangyue.com/api/resource').then( (response) => {
+      axios.get('https://api.zhaoguangyue.com/api/resource').then( (response) => {
         this.data = response.data.data;
         console.log(this.data);
       } )

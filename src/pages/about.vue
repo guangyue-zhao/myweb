@@ -19,7 +19,7 @@ export default {
   },
   methods:{
     getAbout(){
-      axios.get('http://api.zhaoguangyue.com/api/about').then( (response) => {
+      axios.get('https://api.zhaoguangyue.com/api/about').then( (response) => {
         console.log(response.data)
         this.data = response.data.data;
       } )
