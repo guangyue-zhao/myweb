@@ -26,7 +26,7 @@ export default {
   },
   methods:{
     getArticlesList(){
-      axios(`http://api.zhaoguangyue.cn/api/archive/category?_id=${this.$route.query._id}`).then( (response) => {
+      axios(`http://api.zhaoguangyue.com/api/archive/category?_id=${this.$route.query._id}`).then( (response) => {
 
         this.categorys = response.data.data;
       });
