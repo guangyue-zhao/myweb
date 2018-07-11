@@ -106,13 +106,16 @@
     color: #666;
   }
   @media print,screen and (max-width: 768px ) {
-    .el-menu-item a{
-      padding: 0 20px;;
+    .el-menu-item{
+      padding: 0 20px;
     }
     .logo{
       margin-bottom: 20px;
       padding-left: 20px;
       position: relative;
+    }
+    .logo img{
+      left: 20px;
     }
   }
 </style>

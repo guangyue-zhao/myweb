@@ -39,8 +39,16 @@ const webpackConfig = merge(baseWebpackConfig, {
     }]),
     new PrerenderSpaPlugin(
       path.join(__dirname, 'dist'),
-      [ '/', '/index', '/archive', '/resource','/about','/archive/category','/viewArticle']
+      [ '/', '/index', '/archive', '/resource','/about']
     ),
+    {
+      //在一定时间后再捕获页面信息，使得页面数据信息加载完成
+        captureAfterTime: 50000,
+        //忽略打包错误
+        ignoreJSErrors: true,
+        phantomOptions: '--web-security=false',
+        maxAttempts: 10,
+      },
     new UglifyJsPlugin({
       uglifyOptions: {
         compress: {

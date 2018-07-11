@@ -38,7 +38,7 @@ export default {
   },
   methods:{
     getArticle(){
-      axios.get(`https://api.zhaoguangyue.com/api/viewArticle?_id=${this.artId}`).then( (response) => {
+      axios.get(`http://api.zhaoguangyue.com/api/viewArticle?_id=${this.artId}`).then( (response) => {
         this.article = response.data.data
       })
     }
@@ -50,6 +50,8 @@ export default {
 .article{
   padding: 40px;
   margin: 20px 0;
+  animation: lightSpeedIn .5s;
+  word-wrap:break-word;
   box-shadow: 0 -1px 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.15), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
 
   .article-title{
@@ -85,4 +87,6 @@ export default {
     transform: translateX(10px);
   }
 }
+
+
 </style>

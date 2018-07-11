@@ -1,7 +1,7 @@
 <template lang="html">
   <el-row>
     <el-col>
-      &copy;2018 前端进阶日记&nbsp;&nbsp;&nbsp;京ICP备18301441号
+      &copy;2018 前端进阶日记&nbsp;&nbsp;&nbsp;京ICP备18031441号-2
     </el-col>
   </el-row>
 </template>

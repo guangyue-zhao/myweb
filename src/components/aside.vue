@@ -43,7 +43,7 @@ export default {
   },
   methods:{
     getlinks(){
-      axios('https://api.zhaoguangyue.com/api/getcategory').then( (response) => {
+      axios('http://api.zhaoguangyue.com/api/getcategory').then( (response) => {
           this.categories = response.data.data;
       })
     }

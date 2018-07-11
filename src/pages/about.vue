@@ -1,5 +1,5 @@
 <template lang="html">
-  <el-col>
+  <el-col class="about">
     <h1 class="aboutme">关于我</h1>
     <el-row v-html="data.content"></el-row>
   </el-col>
@@ -19,7 +19,7 @@ export default {
   },
   methods:{
     getAbout(){
-      axios.get('https://api.zhaoguangyue.com/api/about').then( (response) => {
+      axios.get('http://api.zhaoguangyue.com/api/about').then( (response) => {
         console.log(response.data)
         this.data = response.data.data;
       } )
@@ -29,8 +29,14 @@ export default {
 </script>
 
 <style lang="less" scroped>
+  .about{
+    animation: lightSpeedIn .5s;
+    word-wrap:break-word;
+  }
   .aboutme{
     font-size:24px;
     color:#3c3c3c;
+
   }
+
 </style>
