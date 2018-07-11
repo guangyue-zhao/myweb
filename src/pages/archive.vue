@@ -1,6 +1,6 @@
 <template lang="html">
-  <el-col>
-    <h1 class="archive">文章归档</h1>
+  <el-col class="archive ">
+    <h1 class="archive-title">文章归档</h1>
 
     <el-row class="sort" v-for="(item,index) in data" :key="index">
 
@@ -43,7 +43,7 @@ export default {
   },
   methods:{
     getAll(){
-      axios('https://api.zhaoguangyue.com/api/archive').then( (response) => {
+      axios('http://api.zhaoguangyue.com/api/archive').then( (response) => {
         for(var i = 0;i<response.data.data.length;i++){
           var year = moment(response.data.data[i].createTime).year();
           // 如果data没有值，则创建，否则遍历 判断  填充
@@ -79,6 +79,9 @@ export default {
 
 <style lang="less" scroped>
   .archive{
+    animation: lightSpeedIn .5s;
+  }
+  .archive-title{
     font-size: 24px;
     color: #3c3c3c;
   }
@@ -163,4 +166,5 @@ export default {
     border-radius: 50%;
 
   }
+
 </style>

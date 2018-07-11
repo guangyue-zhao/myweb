@@ -1,5 +1,5 @@
 <template lang="html">
-  <div >
+  <div class="category-menu">
     <h1 class="category-name">{{categorys.name}}</h1>
     <ul>
       <li v-for="item in categorys.articles">
@@ -26,7 +26,7 @@ export default {
   },
   methods:{
     getArticlesList(){
-      axios(`https://api.zhaoguangyue.com/api/archive/category?_id=${this.$route.query._id}`).then( (response) => {
+      axios(`http://api.zhaoguangyue.com/api/archive/category?_id=${this.$route.query._id}`).then( (response) => {
 
         this.categorys = response.data.data;
       });
@@ -36,6 +36,9 @@ export default {
 </script>
 
 <style lang="less" scoped>
+  .category-menu{
+    animation: lightSpeedIn .5s;
+  }
   .category-name{
     color: #3c3c3c;
     font-size: 24px;
@@ -50,4 +53,5 @@ export default {
   .item-title:hover{
     color: #0098fe;
   }
+
 </style>

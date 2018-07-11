@@ -16,6 +16,7 @@
         </el-row>
       </el-row>
     </el-col>
+    <div class="backTop" @click="backTop()" :class = "{showBackTop : backTopShow}"><i class="iconfont icon-huidaodingbu"></i></div>
   </article>
 </template>
 
@@ -30,7 +31,8 @@ export default {
   data(){
     return {
       arts:{},
-      artId:''
+      artId:'',
+      backTopShow: false
     }
   },
   created(){
@@ -43,14 +45,29 @@ export default {
   },
   methods:{
     loadArticle(){
-      axios('https://api.zhaoguangyue.com/api/index').then( (response) => {
+      axios('http://api.zhaoguangyue.com/api/index').then( (response) => {
         this.arts = response.data.data;
       });
     },
     getId(event){
       this.$store.commit('VIEW_ARTICLE',event);
-    }
-  }
+    },
+    handleScroll(){
+      this.scrollTop = document.pageYOffset|| document.documentElement.scrollTop||document.body.scrollTop;
+
+      if(this.scrollTop> 100){
+        this.backTopShow = true;
+      }else{
+        this.backTopShow = false;
+      }
+    },
+    backTop(){
+       document.documentElement.scrollTop = document.body.scrollTop = 0 ;
+    },
+  },
+  mounted(){
+    window.addEventListener('scroll',this.handleScroll)
+  },
 }
 </script>
 
@@ -61,6 +78,7 @@ export default {
   }
   .article{
     padding: 40px;
+    animation: lightSpeedIn .5s;
     margin: 20px 0;
     box-shadow: 0 -1px 2px 0 rgba(0,0,0,0.12), 0 2px 2px 0 rgba(0,0,0,0.15), 0 3px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
 
@@ -96,5 +114,24 @@ export default {
     .el-button:hover .el-icon-d-arrow-right{
       transform: translateX(10px);
     }
+  }
+  .backTop{
+    transition: all .3s ;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #0098fe;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+    text-align: center;
+    line-height: 38px;
+    opacity: 0;
+    cursor: pointer;
+  }
+  .backTop .iconfont{
+    font-size: 30px;
+  }
+  .showBackTop{
+    opacity: 1;
   }
 </style>
